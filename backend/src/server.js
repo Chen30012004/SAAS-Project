@@ -5,6 +5,8 @@ const dotenv = require('dotenv');
 // Load biến môi trường từ file .env
 dotenv.config();
 
+const db = require('./config/db');
+
 const app = express();
 const PORT = process.env.PORT || 5000;
 
