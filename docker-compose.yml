@@ -14,5 +14,31 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
 
+  backend:
+    build: ./backend
+    container_name: saas_backend
+    restart: always
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_USER=saas_user
+      - DB_PASSWORD=saas_password
+      - DB_NAME=saas_db
+      - JWT_SECRET=super_secret_jwt_key_for_saas
+    depends_on:
+      - postgres
+
+  frontend:
+    build: ./frontend
+    container_name: saas_frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
 volumes:
   pgdata:

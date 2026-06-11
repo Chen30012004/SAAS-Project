@@ -23,7 +23,7 @@ const requireFeature = (requiredFeature) => {
       if (checkResult.rows.length === 0) {
         return res.status(403).json({ 
           success: false, 
-          message: \`Bạn cần nâng cấp gói để sử dụng tính năng: \${requiredFeature}\` 
+          message: `Bạn cần nâng cấp gói để sử dụng tính năng: ${requiredFeature}` 
         });
       }
 
