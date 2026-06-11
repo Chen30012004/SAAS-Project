@@ -20,9 +20,11 @@ app.get('/', (req, res) => {
 
 // Import routes
 const packageRoutes = require('./routes/packageRoutes');
+const authRoutes = require('./routes/authRoutes');
 
 // Đăng ký routes
 app.use('/api/packages', packageRoutes);
+app.use('/api/auth', authRoutes);
 
 // Health check API
 app.get('/api/health', (req, res) => {
