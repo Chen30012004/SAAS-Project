@@ -18,6 +18,12 @@ app.get('/', (req, res) => {
   res.send('Chào mừng bạn đến với SAAS Backend API!');
 });
 
+// Import routes
+const packageRoutes = require('./routes/packageRoutes');
+
+// Đăng ký routes
+app.use('/api/packages', packageRoutes);
+
 // Health check API
 app.get('/api/health', (req, res) => {
   res.status(200).json({ status: 'OK', message: 'Server is running normally' });
