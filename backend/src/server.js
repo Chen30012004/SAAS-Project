@@ -22,11 +22,15 @@ app.get('/', (req, res) => {
 const packageRoutes = require('./routes/packageRoutes');
 const authRoutes = require('./routes/authRoutes');
 const transactionRoutes = require('./routes/transactionRoutes');
+const userRoutes = require('./routes/userRoutes');
+const aiRoutes = require('./routes/aiRoutes');
 
 // Đăng ký routes
 app.use('/api/packages', packageRoutes);
 app.use('/api/auth', authRoutes);
 app.use('/api/transactions', transactionRoutes);
+app.use('/api/users', userRoutes);
+app.use('/api/ai', aiRoutes);
 
 // Health check API
 app.get('/api/health', (req, res) => {
