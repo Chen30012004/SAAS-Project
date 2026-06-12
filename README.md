@@ -60,14 +60,23 @@ npm run dev                        # Start server on port 5000
 ### 3. Run Frontend
 Open a **new** terminal and run:
 \`\`\`bash
+```bash
 cd frontend
 npm install
 npm run dev                        # Start Vite server on port 5173
-\`\`\`
+```
 
 4. Access the application:
-   - Frontend: **\`http://localhost:5173\`**
-   - Backend API: \`http://localhost:5000\`
+   - Frontend: **`http://localhost:5173`**
+   - Backend API: `http://localhost:5000`
+
+---
+
+## Test Account 🔑
+
+To quickly test the application without registering, use the following credentials:
+- **Email**: `intern@gmail.com`
+- **Password**: `my_strong_password`
 
 ---
 
