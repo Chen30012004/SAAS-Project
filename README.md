@@ -18,12 +18,9 @@ A full-stack web application demonstrating a complete Credits and Package manage
 - **Database**: PostgreSQL (using \`pg\` driver with Connection Pools).
 - **DevOps**: Docker & Docker Compose (Multi-stage builds).
 
-## Prerequisites 🛠️
+---
 
-- Docker & Docker Compose (Recommended)
-- OR Node.js (v18+) and local PostgreSQL
-
-## Getting Started (Docker - Recommended) 🐳
+## 🚀 Getting Started (Option 1: Using Docker - Recommended)
 
 The easiest way to run the application is using Docker Compose.
 
@@ -37,8 +34,42 @@ The easiest way to run the application is using Docker Compose.
    docker exec saas_backend node src/scripts/seedPackages.js
    \`\`\`
 3. Access the application:
-   - Frontend: \`http://localhost\`
+   - Frontend: **\`http://localhost\`** (Nginx serves on port 80)
    - Backend API: \`http://localhost:5000\`
+
+---
+
+## 💻 Getting Started (Option 2: Local Setup - Without Docker)
+
+If you prefer to run the application directly on your machine using Node.js:
+
+### 1. Setup Database
+You must have PostgreSQL installed locally (or run just the DB via docker: \`docker compose up -d postgres\`).
+Make sure your \`backend/.env\` file has the correct database credentials.
+
+### 2. Run Backend
+Open a terminal and run:
+\`\`\`bash
+cd backend
+npm install
+node src/scripts/initDb.js         # Initialize tables
+node src/scripts/seedPackages.js   # Seed packages
+npm run dev                        # Start server on port 5000
+\`\`\`
+
+### 3. Run Frontend
+Open a **new** terminal and run:
+\`\`\`bash
+cd frontend
+npm install
+npm run dev                        # Start Vite server on port 5173
+\`\`\`
+
+4. Access the application:
+   - Frontend: **\`http://localhost:5173\`**
+   - Backend API: \`http://localhost:5000\`
+
+---
 
 ## Architecture Highlights 🏗️
 
